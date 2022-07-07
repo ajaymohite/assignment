@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config></context:annotation-config>
+
+	<bean id="itembean" class="practice.Item">
+		<property name="name" value="Laptop"></property>
+	</bean>
+
+
+	<bean id="studentbean" class="practice.Student">
+		<constructor-arg value="123" type="int"></constructor-arg>
+		<constructor-arg value="ajay"></constructor-arg>
+	</bean>
+
+<!--  Q1 -->
+
+<bean id="fact" class="Q1.Role" factory-method="getRole">
+</bean>	
+
+
+
+<!-- Q2 -->
+
+	<bean id="ave" class="Q2.AveNum">
+
+		<property name="num">
+			<list>
+				<value>38</value>
+				<value>29</value>
+				<value>44</value>
+				<value>98</value>
+				<value>99</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- Q3 -->
+	
+	<bean id="emi1" class="Q3.Emi">
+	<property name="rate" value="7.5"></property>
+	</bean>
+	
+	
+	
+<!-- Q4 -->
+	<bean id="emp1" class="Q4.Employee" autowire="byName">
+		<property name="empId" value="101"></property>
+		<property name="empName" value="ajay kumar"></property>
+		<property name="salary" value="23000"></property>
+	</bean>
+
+	<bean id="depart1" class="Q4.Department">
+		<property name="deptId" value="1"></property>
+		<property name="deptName" value="Account"></property>
+
+	</bean>
+	<bean id="emp2" class="Q4.Employee" autowire="byName">
+		<property name="empId" value="102"></property>
+		<property name="empName" value="vijay kumar"></property>
+		<property name="salary" value="26000"></property>
+	</bean>
+
+	<bean id="depart2" class="Q4.Department">
+		<property name="deptId" value="2"></property>
+		<property name="deptName" value="hr"></property>
+
+	</bean>
+	
+	<bean id="emp3" class="Q4.Employee" autowire="byName">
+		<property name="empId" value="103"></property>
+		<property name="empName" value="virat kohli"></property>
+		<property name="salary" value="51000"></property>
+	</bean>
+
+	<bean id="depart3" class="Q4.Department">
+		<property name="deptId" value="1"></property>
+		<property name="deptName" value="Account"></property>
+
+	</bean>
+	<bean id="emp4" class="Q4.Employee" autowire="byName">
+		<property name="empId" value="104"></property>
+		<property name="empName" value="rohit sharma"></property>
+		<property name="salary" value="31000"></property>
+	</bean>
+
+	<bean id="depart4" class="Q4.Department">
+		<property name="deptId" value="2"></property>
+		<property name="deptName" value="hr"></property>
+
+	</bean>
+
+
+
+	<!-- Q5 -->
+
+	<bean id="max1" class="Q5.Max">
+
+		<property name="numbers">
+			<list>
+				<value>38</value>
+				<value>29</value>
+				<value>44</value>
+				<value>98</value>
+				<value>99</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<!-- Q6 -->
+
+	<bean id="vow1" class="Q6.Vowel">
+		<property name="st">
+			<array>
+				<value>tv</value>
+				<value>computer</value>
+				<value>fly</value>
+				<value>laptop</value>
+				<value>crypt</value>
+
+			</array>
+
+		</property>
+
+	</bean>
+
+
+	<!-- Q7 -->
+	<bean id="array1" class="Q7.Array1">
+		<property name="a">
+			<array>
+				<value>10</value>
+				<value>20</value>
+				<value>30</value>
+				<value>40</value>
+
+			</array>
+
+		</property>
+
+	</bean>
+
+
+	<bean id="array2" class="Q7.Array2">
+		<property name="b">
+			<array>
+				<value>15</value>
+				<value>25</value>
+				<value>35</value>
+				<value>45</value>
+
+			</array>
+
+		</property>
+
+	</bean>
+	<!-- Q8 -->
+
+	<bean id="itemlist" class="Q8.Item">
+
+		<property name="item">
+			<list>
+				<value>Laptop</value>
+				<value>TV</value>
+				<value>Mouse</value>
+				<value>Mobile</value>
+				<value>TV</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+		<!-- Q9 -->
+	
+	<bean id="city1"
+		class="Q9.City">
+		<property name="fromCity" value="mumbai"></property>
+		<property name="toCity" value="bangalore"></property>
+		<property name="distance" value="992"></property>
+	</bean>
+
+	<bean id="city2"
+		class="Q9.City">
+		<property name="fromCity" value="pune"></property>
+		<property name="toCity" value="kolhapur"></property>
+		<property name="distance" value="250"></property>
+	</bean>
+
+	<bean id="city3" class="Q9.City">
+		<property name="fromCity" value="pune"></property>
+		<property name="toCity" value="mumbai"></property>
+		<property name="distance" value="150"></property>
+	</bean>
+
+	<bean id="city4"
+		class="Q9.City">
+		<property name="fromCity" value="indore"></property>
+		<property name="toCity" value="pune"></property>
+		<property name="distance" value="590"></property>
+	</bean>
+	
+	
+	<!-- Q10 -->
+	
+	<bean id="stu11" class="Q10.Student">
+		<constructor-arg>
+			<map>
+				<entry key="john" value="420"></entry>
+				<entry key="ajay" value="470"></entry>
+				<entry key="vijay" value="388"></entry>
+				<entry key="scott" value="299"></entry>
+				<entry key="pawan" value="477"></entry>
+				<entry key="kumar" value="300"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	<!-- Q11 -->
+	
+	
+	<bean id="result1" class="Q11.Result">
+		<constructor-arg value="67" ></constructor-arg>
+		<constructor-arg value="78" ></constructor-arg>
+		<constructor-arg value="82" ></constructor-arg>
+		<constructor-arg value="91" ></constructor-arg>
+	</bean>
+
+	<bean id="student1" class="Q11.Student">
+		
+		<constructor-arg value="akash"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="1996/09/30"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="A"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result1" />
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="result2" class="Q11.Result">
+		<constructor-arg value="76" ></constructor-arg>
+		<constructor-arg value="88" ></constructor-arg>
+		<constructor-arg value="82" ></constructor-arg>
+		<constructor-arg value="96" ></constructor-arg>
+	</bean>
+
+	<bean id="student2" class="Q11.Student">
+		
+		<constructor-arg value="rahul"></constructor-arg>
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="1997/12/20"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="A"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result2" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="result3" class="Q11.Result">
+		<constructor-arg value="56" ></constructor-arg>
+		<constructor-arg value="65" ></constructor-arg>
+		<constructor-arg value="67" ></constructor-arg>
+		<constructor-arg value="61" ></constructor-arg>
+	</bean>
+
+	<bean id="student3" class="Q11.Student">
+		
+		<constructor-arg value="amod"></constructor-arg>
+		<constructor-arg value="3"></constructor-arg>
+		<constructor-arg value="1998/1/18"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="B"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result3" />
+		</constructor-arg>
+	</bean>
+	
+		<bean id="result4" class="Q11.Result">
+		<constructor-arg value="56" ></constructor-arg>
+		<constructor-arg value="65" ></constructor-arg>
+		<constructor-arg value="88" ></constructor-arg>
+		<constructor-arg value="83" ></constructor-arg>
+	</bean>
+
+	<bean id="student4" class="Q11.Student">
+	
+		<constructor-arg value="rohit"></constructor-arg>
+			<constructor-arg value="4" type="int"></constructor-arg>
+		<constructor-arg value="1997/03/28"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="C"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result4" />
+		</constructor-arg>
+	</bean>
+	
+	
+
+
+
+
+
+
+	<!-- Q12 -->
+
+	<bean id="employee1" class="Q12.Employee">
+		<property name="empId" value="101"></property>
+		<property name="empName" value="vijay patil"></property>
+		<property name="salary" value="25000"></property>
+		<property name="dept" ref="dept1"></property>
+	</bean>
+
+	<bean id="dept1" class="Q12.Department">
+		<property name="deptId" value="1"></property>
+		<property name="deptName" value="Account"></property>
+	</bean>
+
+	<bean id="employee2" class="Q12.Employee">
+		<property name="empId" value="102"></property>
+		<property name="empName" value="amit sharma"></property>
+		<property name="salary" value="21000"></property>
+		<property name="dept" ref="dept2"></property>
+	</bean>
+	<bean id="dept2" class="Q12.Department">
+		<property name="deptId" value="2"></property>
+		<property name="deptName" value="finance"></property>
+	</bean>
+
+	<bean id="employee3" class="Q12.Employee">
+		<property name="empId" value="103"></property>
+		<property name="empName" value="vijay kumar"></property>
+		<property name="salary" value="29000"></property>
+		<property name="dept" ref="dept3"></property>
+	</bean>
+	<bean id="dept3" class="Q12.Department">
+		<property name="deptId" value="2"></property>
+		<property name="deptName" value="finance"></property>
+	</bean>
+
+	<bean id="employee4" class="Q12.Employee">
+		<property name="empId" value="104"></property>
+		<property name="empName" value="amit pathak"></property>
+		<property name="salary" value="35000"></property>
+		<property name="dept" ref="dept4"></property>
+	</bean>
+	<bean id="dept4" class="Q12.Department">
+		<property name="deptId" value="1"></property>
+		<property name="deptName" value="Account"></property>
+	</bean>
+	
+	
+	
+	
+	<!-- Q13 -->
+	
+	<bean id="movie1" class="Q13.Movie">
+		<property name="movieName" value="Dabang"></property>
+		<property name="timeSlot" value="7-10"></property>
+		<property name="ticketPrice" value="100"></property>
+	</bean>
+	
+
+<!-- Q14 -->
+
+<bean id="circle" class="Q14.ShapeFactory" factory-method="getCircleObject"></bean>
+<bean id="rectangle" class="Q14.ShapeFactory" factory-method="getRectangleObject"></bean>
+<bean id="square" class="Q14.ShapeFactory" factory-method="getSquareObject"></bean>
+
+
+	<!-- Q15 -->
+
+	<bean id="cust1" class="Q15.Customer">
+		<property name="custId" value="111"></property>
+		<property name="custName" value="ajay mohite"></property>
+		<property name="item" ref="item1">
+		</property>
+
+	</bean>
+
+	<bean id="item1" class="Q15.Item">
+		<property name="itemId" value="123"></property>
+		<property name="itemName" value="white shirt"></property>
+		<property name="price" value="999"></property>
+		<property name="cat" ref="cat1"></property>
+	</bean>
+
+	<bean id="cat1" class="Q15.Category">
+		<property name="category" value="cloth"></property>
+	</bean>
+
+
+
+
+
+</beans>
